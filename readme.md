@@ -30,7 +30,10 @@ hot-release.js
 ```js
 import hotRelease from 'webpack-hot-release/client'
 
-hotRelease()
+hotRelease({
+  // how long to check update
+  throttle: 20
+})
 ```
 
 ### How it works?
