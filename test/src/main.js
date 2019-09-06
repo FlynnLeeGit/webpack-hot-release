@@ -1,3 +1,4 @@
+import './hot-release'
 import Vue from 'vue'
 import App from './App.vue'
 

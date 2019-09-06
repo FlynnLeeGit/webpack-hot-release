@@ -1,5 +1,11 @@
 {
   "name": "webpack-hot-release",
   "version": "0.0.1",
-  "description": "spa hot release with webpack"
+  "description": "spa hot release with webpack",
+  "dependencies": {
+    "chalk": "^2.4.2"
+  },
+  "devDependencies": {
+    "git-rev-sync": "^1.12.0"
+  }
 }
