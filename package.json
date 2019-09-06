@@ -1,0 +1,5 @@
+{
+  "name": "webpack-hot-release",
+  "version": "0.0.1",
+  "description": "spa hot release with webpack"
+}
