@@ -1,7 +1,8 @@
 {
   "name": "webpack-hot-release",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "spa hot release with webpack",
+  "main": "plugin.js",
   "dependencies": {
     "chalk": "^2.4.2"
   },
