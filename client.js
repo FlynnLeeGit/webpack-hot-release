@@ -3,8 +3,38 @@ import { ajax } from './utils/ajax'
 
 const RELOAD_DELAY = 100 // 页面刷新延迟时间
 
-let lastUpdate = 0
+function addGitInfo() {
+  const gitEl = document.createElement('div')
+  const gitStyle = document.createElement('style')
+  gitEl.className = 'git'
+  gitEl.innerHTML = `${process.env.GIT_COMMIT} ${process.env.GIT_MESSAGE}`
+  let clicked = 0
+  gitEl.onclick = function() {
+    clicked++
+    if (clicked > 2) {
+      gitEl.style.opacity = 1
+    }
+  }
+  gitStyle.textContent = `.git {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 99;
+    opacity: 0;
+    padding:0 4px;
+    font-size: 12px;
+    line-height: 18px;
+    color: #fff;
+    background-color: blue;
+  }`
+  document.head.appendChild(gitStyle)
+  document.body.appendChild(gitEl)
+}
 
+
+
+
+let lastUpdate = 0
 function hotRelease({ throttle = 10, baseUrl = '/' } = {}) {
   // in 10s no twice
   if (new Date().getTime() - lastUpdate < throttle * 1000) {
@@ -50,7 +80,7 @@ export default function hotReleaseClient({ throttle, baseUrl } = {}) {
     )
     return
   }
-
+  addGitInfo()
   const oriPushState = window.history.pushState
   const oriReplaceState = window.history.replaceState
   /**
