@@ -8,10 +8,10 @@ webpack.config.js
 - should
 
 ```js
-const WebpackHotReleasePlugin = require('webpack-hot-release/plugin')
+const WebpackHotReleasePlugin = require("webpack-hot-release/plugin");
 
 {
-  plugins: [new WebpackHotReleasePlugin()]
+  plugins: [new WebpackHotReleasePlugin()];
 }
 ```
 
@@ -22,18 +22,24 @@ browser
  * first script
  **/
 
-import './hot-release.js'
+import "./hot-release.js";
 ```
 
 hot-release.js
 
 ```js
-import hotRelease from 'webpack-hot-release/client'
+import hotRelease from "webpack-hot-release/client";
 
 hotRelease({
   // how long to check update
-  throttle: 20
-})
+  throttle: 20,
+  // baseUrl to fetch release.json when you use subPath,it's useful
+  baseUrl: "/",
+  // default git message on screen，can pass html tag
+  gitHtml({ message, commit, date }) {
+    return `${commit} ${message} ${date}`;
+  }
+});
 ```
 
 ### How it works?
