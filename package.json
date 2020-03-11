@@ -1,10 +1,15 @@
 {
   "name": "webpack-hot-release",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "spa hot release with webpack",
   "main": "plugin.js",
   "dependencies": {
     "chalk": "^2.4.2",
     "git-rev-sync": "^1.12.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FlynnLeeGit/webpack-key-parse"
+  },
+  "homepage": "https://github.com/FlynnLeeGit/webpack-key-parse"
 }

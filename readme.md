@@ -4,8 +4,8 @@ single page application hot release with webpack && git
 
 webpack.config.js
 
-- should support git
-- should
+- should use git
+- should use history mode with spa router
 
 ```js
 const WebpackHotReleasePlugin = require("webpack-hot-release/plugin");
